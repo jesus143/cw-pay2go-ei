@@ -1,0 +1,184 @@
+@font-face{
+	font-family:'GothamBook';
+	src:url(../font/Gotham-Book.eot?#iefix) format('embedded-opentype'), 
+			url(../font/Gotham-Book.woff) format('woff'),
+			url(../font/Gotham-Book.ttf) format('truetype'), 
+			url(../font/Gotham-Book.svg#GothamBook) format('svg');
+
+	font-style:normal;
+	font-weight:100;
+}
+
+@font-face{
+	font-family:'Raleway';
+	src:url(../font/raleway-regular-webfont.eot?#iefix) format('embedded-opentype'), 
+			url(../font/raleway-regular-webfont.woff) format('woff'),
+			url(../font/raleway-regular-webfont.ttf) format('truetype'), 
+			url(../font/raleway-regular-webfont.svg#Raleway) format('svg');
+
+	font-style:normal;
+	font-weight:100;
+}
+
+@font-face{
+	font-family:'FontAwesome';
+	src:url(../font/fontawesome-webfont?#iefix) format('embedded-opentype'), 
+			url(../font/fontawesome-webfont.woff) format('woff'),
+			url(../font/fontawesome-webfont.ttf) format('truetype'), 
+			url(../font/fontawesome-webfont#FontAwesome) format('svg');
+
+	font-weight:normal;
+	font-style:normal;
+}
+
+DIV.cw-pay2go-ei_rows{
+	clear:both;
+	padding:25px 0;
+}
+
+DIV.cw-pay2go-ei_rows[data-visible]{
+	display:none;
+}
+
+DIV.cw-pay2go-ei_rows > P{
+	float:left;
+	width:150px;
+	/* text-align:right; */
+	padding:0;
+	margin:0;
+}
+
+DIV.cw-pay2go-ei_rows > DIV{
+	float:left;
+	width:600px;
+	padding-left:20px;
+}
+
+P.cw-pay2go-ei_rows-checkbox{
+	line-height:20px;
+}
+
+P.cw-pay2go-ei_rows-text, 
+P.cw-pay2go-ei_rows-select, 
+P.cw-pay2go-ei_rows-number{
+	line-height:30px;
+}
+
+DIV.cw-pay2go-ei_rows INPUT[type="text"]{
+	width:420px;
+}
+
+DIV.cw-pay2go-ei_rows INPUT[type="text"]+SPAN, 
+DIV.cw-pay2go-ei_rows INPUT[type="number"]+SPAN{
+	display:block;
+	margin-top:5px;
+}
+
+DIV.cw-pay2go-ei_rows INPUT[type="text"]+SPAN::BEFORE{
+	content:'';
+}
+
+DIV.cw-pay2go-ei_rows > DIV:ONLY-CHILD{
+	float:none;
+	/* width:900px; */
+	padding-left:320px;
+}
+
+#cw-pay2go-ei_submit{
+	background:#0085BA;
+	border-color:#0073AA #006799 #006799;
+	box-shadow:0 1px 0 #006799;
+	color:#FFF;
+	text-decoration:none;
+	text-shadow:0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+	padding:8px 20px;
+	text-align:center;
+	border-radius:3px;
+	border:none;
+	box-sizing:border-box;
+	cursor:pointer;
+	display:inline-block;
+	font-size:13px;
+}
+
+#cw-pay2go-ei_submit+IMG{
+	margin-left:10px;
+	vertical-align:middle;
+	display:none;
+}
+
+#cw-pay2go-ei_submit.active{
+	display:none;
+}
+
+#cw-pay2go-ei_submit.active+IMG{
+	display:inherit;
+}
+
+#cw-pay2go-ei_submit-result{
+	display:none;
+}
+
+#cw-pay2go-ei_submit-result.success, 
+#cw-pay2go-ei_submit-result.fail{
+	display:inline;
+}
+
+#cw-pay2go-ei_submit-result::BEFORE{
+	font-family:'FontAwesome';
+	font-size:1.8rem;
+	vertical-align:middle;
+	margin-left:10px;
+}
+
+#cw-pay2go-ei_submit-result.success::BEFORE{
+	content:'\F058';
+	color:#090;
+}
+
+#cw-pay2go-ei_submit-result.fail::BEFORE{
+	content:'\F06A';
+	color:#C00;
+}
+
+
+TD.order_actions.column-order_actions A.button.tips.post_to_pay2go{
+	display:block;
+	height:2em !important;
+	padding:0 !important;
+	position:relative;
+	text-indent:-9999px;
+	width: 2em;
+}
+
+TD.order_actions.column-order_actions A.button.tips.post_to_pay2go::AFTER{
+
+	font-family:'FontAwesome';
+	content:'\F118';
+
+	height:100%;
+	left:0;
+	line-height:1.85;
+	margin:0;
+	position:absolute;
+	text-align:center;
+	text-indent:0;
+	top:0;
+	width:100%;
+
+	font-size:14px;
+}
+
+/*
+TD.order_actions.column-order_actions A.button.tips.post_to_pay2go.posted{
+	background:#0C0;
+}
+*/
+
+TD.order_actions.column-order_actions A.button.tips.post_to_pay2go.posted::AFTER{
+	color:#F09833;
+}
+
+
+
+
