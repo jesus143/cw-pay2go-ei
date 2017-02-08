@@ -247,7 +247,7 @@ class CWP2GEI extends WC_Payment_Gateway{
 		return $arrOrderInfo;
 
 	}
-E:\xampp\htdocs\wp-content\plugins\cw-pay2go-ei\cw-pay2go-ei.php
+
 	function PostElectronicInvoice($order_id=false){ /* 有 $order_id 的狀況: status to processing */
 
 
