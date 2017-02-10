@@ -1,0 +1,2 @@
+[10-Feb-2017 06:45:54 UTC] PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known.  in E:\xampp\htdocs\wp-content\plugins\wishlist-member\core\Class.php on line 876
+[10-Feb-2017 06:45:54 UTC] PHP Warning:  file_get_contents(http://wishlist-marketplace.s3.amazonaws.com/trigger.txt): failed to open stream: php_network_getaddresses: getaddrinfo failed: No such host is known.  in E:\xampp\htdocs\wp-content\plugins\wishlist-member\core\Class.php on line 876

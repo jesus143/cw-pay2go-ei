@@ -28,3 +28,14 @@ function CWP2GEI(){
 		include CWP2GEI_DIR.'/includes/class_cw-pay2go-ei.php';
 	}
 }
+
+add_shortcode('pay2go_invoice', 'pay2go_invoice_func'); 
+ 
+function pay2go_invoice_func() { 
+	
+	if(class_exists('WC_Payment_Gateway')){ 
+		include CWP2GEI_DIR.'/includes/class-cw-pay2goe-ei-spgateway.php'; 
+		$data = new CWP2GEI_SPGATEWAY(); 
+  
+	} 
+}

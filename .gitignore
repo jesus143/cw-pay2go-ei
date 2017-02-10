@@ -8,7 +8,8 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-
+.zip
+/.zip
 /.idea
 # Windows Installer files
 *.cab

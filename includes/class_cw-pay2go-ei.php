@@ -11,6 +11,7 @@ class CWP2GEI extends WC_Payment_Gateway{
 
 	function __construct(){
 
+   
 		if(strpos($_SERVER['SERVER_ADDR'], '192.168')===false){
 			ini_set('log_errors', 'On');
 			ini_set('display_errors', 'Off');
