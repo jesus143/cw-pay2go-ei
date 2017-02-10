@@ -59,7 +59,7 @@ class CWP2GEI extends WC_Payment_Gateway{
 			add_action('wp_head', array($this, 'AddStyles'));
 			add_action('wp_head', array($this, 'AddScripts'));
 
-			add_action('woocommerce_after_order_notes', array($this, 'ElectronicInvoiceFields'));
+//			add_action('woocommerce_after_order_notes', array($this, 'ElectronicInvoiceFields'));
 
 			add_action('woocommerce_checkout_update_order_meta', array($this, 'UpdateOrderMeta'));
 

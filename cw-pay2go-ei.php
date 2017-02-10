@@ -34,8 +34,8 @@ add_shortcode('pay2go_invoice', 'pay2go_invoice_func');
 function pay2go_invoice_func() { 
 	
 	if(class_exists('WC_Payment_Gateway')){ 
-		include CWP2GEI_DIR.'/includes/class-cw-pay2goe-ei-spgateway.php'; 
-		$data = new CWP2GEI_SPGATEWAY(); 
-  
+		include CWP2GEI_DIR.'/includes/class-cw-pay2goe-ei-spgateway.php';
 	} 
 }
+
+pay2go_invoice_func();

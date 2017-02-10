@@ -9,17 +9,17 @@ if(!class_exists('CWP2GEI_SPGATEWAY')):
 
 class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 
-	private $option = [];
-	private $post_data_array = [];
-	private $hashKey = '';
-	private $hashIv = '';
-	private $merchantId = '';
-	private $enable = false;
-	private $taxType = 0;
-	private $status = 0;
-	private $createStatusTime = 0;
-	private $sandbox = 0;
-	private $url = '';
+	public $option = [];
+	public $post_data_array = [];
+	public $hashKey = '';
+	public $hashIv = '';
+	public $merchantId = '';
+	public $enable = false;
+	public $taxtype = 0;
+	public $status = 0;
+	public $createStatusTime = 0;
+	public $sandbox = 0;
+	public $url = '';
 	function __construct() {
 
 		 if(strpos($_SERVER['SERVER_ADDR'], '192.168')===false){
@@ -39,16 +39,17 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 		$this->taxtype          = $this->option->{'taxtype'};
 
 
-		$this->post_data_array = $this->setParameter($data=array());
+		print "<pre>";
+		print_r($this->option);
+		print "</pre>";
+//		exit;
+
 
 		if($this->sandbox == true) {
 			$this->url = "https://cinv.pay2go.com/API/invoice_issue";
 		} else {
 			$this->url = "https://inv.pay2go.com/API/invoice_issue";
 		}
-
-		$this->postInvoice();
-
 	}
 
 	public function setParameter($data)
@@ -56,52 +57,50 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 		//
 		$date = new DateTime();
 
-		//====以上為副程式====
-		$post_data_array = [];
-
-		//
-		if( $this->sandbox == true) {
-			$post_data_array = array(
-				//post_data 欄位資料
-					"RespondType" => "JSON",
-					"Version" => "1.4",
-					"TimeStamp" => time(), //請以  time()  格式
-					"TransNum" => "",
-					"MerchantOrderNo" => $date->getTimestamp(),  //"201409170000009",
-					"BuyerName" => "王大品",
-					"BuyerUBN" => "99112233",
-					"BuyerAddress" => "台北市南港區南港路一段 99 號",
-					"BuyerEmail" => "mrjesuserwinsuarez@gmail.com",
-					"BuyerPhone" => "0955221144",
-					"Category" => "B2B",
-					"TaxType" => "1",
-					"TaxRate" => "5",
-					"Amt" => "490",
-					"TaxAmt" => "10",
-					"TotalAmt" => "500",
-					"CarrierType" => "",
-					"CarrierNum" => rawurlencode(""),
-					"LoveCode" => "",
-					"PrintFlag" => "Y",
-					"ItemName" => "商品一|商品二", //多項商品時，以「|」分開
-					"ItemCount" => "1|2", //多項商品時，以「|」分開
-					"ItemUnit" => "個|個", //多項商品時，以「|」分開
-					"ItemPrice" => "300|100", //多項商品時，以「|」分開
-					"ItemAmt" => "300|200", //多項商品時，以「|」分開
-					"Comment" => "TEST，備註說明",
-					"Status" => "1", //1=立即開立，0=待開立，3=延遲開立
-					"CreateStatusTime" => "",
-					"NotifyEmail" => "1", //1=通知，0=不通知
-			);
-		} else {
-			$post_data_array = [];
-		}
-
-		return $post_data_array;
-
+		//		if( $this->sandbox == false) {
+		//			$this->post_data_array = array(
+		//				//post_data 欄位資料
+		//					"RespondType" => "JSON",
+		//					"Version" => "1.4",
+		//					"TimeStamp" => time(), //請以  time()  格式
+		//					"TransNum" => "",
+		//					"MerchantOrderNo" => $date->getTimestamp(),  //"201409170000009",
+		//					"BuyerName" => "王大品",
+		//					"BuyerUBN" => "99112233",
+		//					"BuyerAddress" => "台北市南港區南港路一段 99 號",
+		//					"BuyerEmail" => "mrjesuserwinsuarez@gmail.com",
+		//					"BuyerPhone" => "0955221144",
+		//					"Category" => "B2B",
+		//					"TaxType" => "1",
+		//					"TaxRate" => "5",
+		//					"Amt" => "490",
+		//					"TaxAmt" => "10",
+		//					"TotalAmt" => "500",
+		//					"CarrierType" => "",
+		//					"CarrierNum" => rawurlencode(""),
+		//					"LoveCode" => "",
+		//					"PrintFlag" => "Y",
+		//					"ItemName" => "商品一|商品二", //多項商品時，以「|」分開
+		//					"ItemCount" => "1|2", //多項商品時，以「|」分開
+		//					"ItemUnit" => "個|個", //多項商品時，以「|」分開
+		//					"ItemPrice" => "300|100", //多項商品時，以「|」分開
+		//					"ItemAmt" => "300|200", //多項商品時，以「|」分開
+		//					"Comment" => "TEST，備註說明",
+		//					"Status" => "1", //1=立即開立，0=待開立，3=延遲開立
+		//					"CreateStatusTime" => "",
+		//					"NotifyEmail" => "1", //1=通知，0=不通知
+		//			);
+		//		} else {
+		$this->post_data_array  = $data;
+		//		}
 	}
 	public function postInvoice()
 	{
+
+
+		//		print "<pre>";
+		//			print_r($this->post_data_array);
+		//		print "</pre>";
 
 		$transaction_data_str = http_build_query(
 			[
