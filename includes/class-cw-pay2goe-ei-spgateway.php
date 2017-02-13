@@ -38,12 +38,11 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 		$this->status           = $this->option->{'status'};
 		$this->taxtype          = $this->option->{'taxtype'};
 
-
-		print "<pre>";
-		print_r($this->option);
-		print "</pre>";
-//		exit;
-
+		//
+		//		print "<pre>";
+		//		print_r($this->option);
+		//		print "</pre>";
+		//		exit;
 
 		if($this->sandbox == true) {
 			$this->url = "https://cinv.pay2go.com/API/invoice_issue";
@@ -97,8 +96,9 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 	public function postInvoice()
 	{
 
-
 		//		print "<pre>";
+		//
+		//		print "post invooice now";
 		//			print_r($this->post_data_array);
 		//		print "</pre>";
 
@@ -111,7 +111,8 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 
 		$result = $this->curlWork($this->url, $transaction_data_str); //背景送出
 
-		print_r($result);
+		//		print "<br><br> status </br>";
+		//		print_r($result);
 
 	}
 	function addPadding($string, $blocksize = 32)
