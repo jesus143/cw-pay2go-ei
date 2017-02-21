@@ -38,10 +38,10 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 		$this->status           = $this->option->{'status'};
 		$this->taxtype          = $this->option->{'taxtype'};
 
-		//
-		//		print "<pre>";
-		//		print_r($this->option);
-		//		print "</pre>";
+
+//		print "<pre>";
+//		print_r($this->option);
+//		print "</pre>";
 		//		exit;
 
 		if($this->sandbox == true) {
@@ -111,8 +111,8 @@ class CWP2GEI_SPGATEWAY extends WC_Payment_Gateway{
 
 		$result = $this->curlWork($this->url, $transaction_data_str); //背景送出
 
-		//		print "<br><br> status </br>";
-		//		print_r($result);
+//		print "<br><br> status </br>";
+//		print_r($result);
 
 	}
 	function addPadding($string, $blocksize = 32)

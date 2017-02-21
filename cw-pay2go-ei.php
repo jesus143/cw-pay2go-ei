@@ -35,6 +35,7 @@ function pay2go_invoice_func() {
 	
 	if(class_exists('WC_Payment_Gateway')){ 
 		include CWP2GEI_DIR.'/includes/class-cw-pay2goe-ei-spgateway.php';
+		include CWP2GEI_DIR.'/includes/helper.php';
 	} 
 }
 
