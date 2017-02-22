@@ -115,7 +115,7 @@ function helper_spgateway_pay2go_invoice_trigger_invoice($orderId, $session, $po
     if(	$data->status == 0 and $oder_status == 'processing' ) {
 //                print "send invoice because status is send invoice when processing "  . $data->status;
         $data->postInvoice();
-    } else if ( $data->status == 100 && $oder_status == 'completed') {
+    } else if ( $data->status == 100 && $oder_status == 'complete') {
         $data->postInvoice();
 //                print " send invoice because order is completed and status is send when product is completed " . $data->status;
     } else {
@@ -171,6 +171,5 @@ function helper_spgateway_pay2go_invoice_get_order_status($orderId)
 function helper_spgateway_pay2go_invoice_set_order_completed($orderId)
 {
     $order = new WC_Order($orderId);
-    WC()->cart->empty_cart(true);
     $order->update_status('completed');
 }
